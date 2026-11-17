@@ -1,0 +1,12 @@
+{
+  "hash": "0f509cad1e269acc5306aad44e02ba46",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Ten Sentence Term Paper 2\"\nexecute:\n  echo: true\n---\n\n# Introduction\n\n::: {#c07ad2ab .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport numpy as np\n\ndf = pd.read_csv(\"data/dnd_monsters.csv\")\n\n```\n:::\n\n\nWizards of the Coast (of Lake Mendota) are trying to investigate relationships between Monsters in the Dungeons and Dragons 5th Edition Manual to see if there are any interesting correlations between specific monster stats. Of note was a monster's HP (Health points), and a monster's Armor Class (AC), or how difficult they are to hit in the first place. \n\n# Literature Review\n\nAs no academic papers cover this important topic, we went to the local tabletop store to peruse opinions of the highest order. Many people pointed to the own experiences of DMs dropping Tarrasques on beginner villages over petty disputes, or issuing far too many magical items to already powerful adventurers, thus resulting in fights that were trivial in nature, though many agree that the hypothesis that Challenge Rating and Armor Class should be positively correlated.\n\n# Methodology\n\nWe have two columns of continuous data (HP and AC as whole number values) we will evaluate this relationship using a simple linear correlation and a scatterplot to visualize the data. These methods are tried and trusted ways to ascertain relationships in data science.\n\n# Results\n\n::: {#728d3fc1 .cell execution_count=2}\n``` {.python .cell-code}\ncorr_val = np.array(df[['hp', 'ac']].corr())[0][1]\n\nprint(corr_val)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n0.6643519539814897\n```\n:::\n:::\n\n\nWe found that there was a strong positive linear relationship between HP and AC, with a correalation coefficient of 0\\.6643519539814897. This bodes well for the hypothesis.\n\n# Results\n\nOur results indicate that HP and AC are positively correlated, which leads us to consider further research in this topic. Other avenues may include researching the relationship of AC and CR, or monster type versus move speed.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

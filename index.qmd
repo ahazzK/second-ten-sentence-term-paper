@@ -1,0 +1,40 @@
+---
+title: "Ten Sentence Term Paper 2"
+execute:
+  echo: true
+---
+
+# Introduction
+
+```{python}
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("data/dnd_monsters.csv")
+
+
+```
+
+Wizards of the Coast (of Lake Mendota) are trying to investigate relationships between Monsters in the Dungeons and Dragons 5th Edition Manual to see if there are any interesting correlations between specific monster stats. Of note was a monster's HP (Health points), and a monster's Armor Class (AC), or how difficult they are to hit in the first place. 
+
+# Literature Review
+
+As no academic papers cover this important topic, we went to the local tabletop store to peruse opinions of the highest order. Many people pointed to the own experiences of DMs dropping Tarrasques on beginner villages over petty disputes, or issuing far too many magical items to already powerful adventurers, thus resulting in fights that were trivial in nature, though many agree that the hypothesis that Challenge Rating and Armor Class should be positively correlated.
+
+# Methodology
+
+We have two columns of continuous data (HP and AC as whole number values) we will evaluate this relationship using a simple linear correlation and a scatterplot to visualize the data. These methods are tried and trusted ways to ascertain relationships in data science.
+
+# Results
+
+```{python}
+corr_val = np.array(df[['hp', 'ac']].corr())[0][1]
+
+print(corr_val)
+```
+
+We found that there was a strong positive linear relationship between HP and AC, with a correalation coefficient of `{python} f"{corr_val}"`. This bodes well for the hypothesis.
+
+# Results
+
+Our results indicate that HP and AC are positively correlated, which leads us to consider further research in this topic. Other avenues may include researching the relationship of AC and CR, or monster type versus move speed.
